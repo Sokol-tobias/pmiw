@@ -1,7 +1,6 @@
 let colorInicial = [167, 178, 48];
 let colorAleatorio;
 let colorActual;
-let spdRotate = 0.05;
 let valoresAleatorios;
 
 function setup() {
@@ -29,18 +28,18 @@ function keyPressed() {
 
   // Botón para aumentar y disminuir la velocidad de giro
   if (key === 'a') { // disminuye
-    spdRotate -= 0.05;
-    console.log(spdRotate);
+    spdRot -= 0.05;
+    console.log(spdRot);
   }
   if (key === 'd') { // aumenta
-    spdRotate += 0.05;
-    console.log(spdRotate);
+    spdRot += 0.05;
+    console.log(spdRot);
   }
 
   // Botón para reiniciar los valores
   if (key === ' ') {
     rotacion = false;
     colorActual = color(colorInicial[0], colorInicial[1], colorInicial[2]);
-    spdRotate = 0.05;
+    spdRot = 0.05;
   }
 }
