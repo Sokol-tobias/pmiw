@@ -1,10 +1,8 @@
 let colorInicial = [167, 178, 48];
-let colorAleatorio;
 let colorActual;
 let valoresAleatorios;
 
 function setup() {
-  createCanvas(800, 400);
   colorActual = color(colorInicial[0], colorInicial[1], colorInicial[2]);
   valoresAleatorios = obtenerValoresAleatorios();
   console.log("Valores aleatorios generados: " + valoresAleatorios[0] + ", " + valoresAleatorios[1] + ", " + valoresAleatorios[2]);

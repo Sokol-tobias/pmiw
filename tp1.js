@@ -2,14 +2,16 @@
 Nombre: Sokol Tobias Ezequiel
  legajo:120375/9
  Comision 5
+ link: https://youtu.be/HdZr6KYvy2s
  */
- let rotacion = false;
+ 
+ 
+  let rotacion = false;
+  
 function preload(){
-pintura=loadImage('data/pintura.jpg');
-let colorActual;
-let colorInicial = [93, 185, 185];
-let rotacion = false;
+  pintura=loadImage("data/pintura.jpg");
 }
+
 function setup() {
   createCanvas(800, 400);
   background(255);
