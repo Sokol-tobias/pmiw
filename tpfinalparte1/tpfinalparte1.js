@@ -1,8 +1,6 @@
 let imagenes = [23], p=0; // arreglo para almacenar las imágenes
 let Px=640, Py=480; //tamaño pantalla
 let boton = [1];
-let posX=Px/2+boton[0].width/2, posY=Py-boton[0].height/2;
-let posX2=Px/2-boton[0].width/2, posY2=Py-boton[0].height/2;
 
 function preload() {
    for(let i=0; i<=23; i++){
