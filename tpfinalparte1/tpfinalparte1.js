@@ -1,3 +1,5 @@
+//VictorioOcantoParte1 https://youtu.be/xrKI5iJW_FE
+//TobiasSokolParte1 https://youtu.be/dyY5u5z6upY
 let imagenes = [23], p=0; // arreglo para almacenar las imágenes
 let Px=640, Py=480; //tamaño pantalla
 let boton = [];
