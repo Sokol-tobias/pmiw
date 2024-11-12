@@ -1,10 +1,10 @@
+//Tobias Ezequiel Sokol 120375/9
 let imagenes = [], p=0; // arreglo para almacenar las imágenes
 let Px=640, Py=480; //tamaño pantalla
 let boton = [];
 let texto=[], t=0;
 let x, y, x1,y1 ;
 let sonido;
-let
 
 function preload() {
    for(let i=0; i<=23; i++){
