@@ -1,4 +1,5 @@
 // Tobias Ezequiel Sokol 120375/9
+// link: https://youtu.be/TlnGF25iOKI
 let pantalla = 1;
 let nave, balas = [], fragmentos = [], obstáculos = [];
 let juegoTerminado = false;
