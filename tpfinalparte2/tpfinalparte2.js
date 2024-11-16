@@ -1,3 +1,4 @@
+// Tobias Ezequiel Sokol 120375/9
 let pantalla = 1;
 let nave, balas = [], fragmentos = [], obstáculos = [];
 let juegoTerminado = false;
