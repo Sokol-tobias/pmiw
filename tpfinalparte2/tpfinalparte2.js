@@ -1,3 +1,5 @@
+//Tobias Ezequiel Sokol  120375/9
+//https://youtu.be/e1p-Pfuh1JM
 let imagenes = {};
 let sonido;
 let pantallaActual = "inicio";
