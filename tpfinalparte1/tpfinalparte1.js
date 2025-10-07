@@ -3,6 +3,7 @@ let txt;
 let pantallas = [];
 function preload(){
 txt = loadStrings ('texto.txt');
+loadVideo();
 for(let i=0; i<=pantallas.length ; i++){
     let nombre = "pantalla"+i+".jpeg";
     pantallas.push(loadImage("imagenes/" + nombre));
