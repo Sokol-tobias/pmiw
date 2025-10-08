@@ -1,11 +1,11 @@
 let fondoX = 640, fondoY = 480;
-let txt;
+let txt , fuente;
 let pantallas = [] , estado = 'intro', p= 0;
 let video;
 
 function preload(){
 txt = loadStrings ('texto.txt');
-
+fuente = loadFont('PORKYS.TTF');
 for(let i=0; i<=18 ; i++){
     let nombre = 'pantalla'+i+'.jpeg';
     pantallas.push(loadImage("imagenes/" + nombre));
