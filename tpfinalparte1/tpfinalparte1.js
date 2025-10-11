@@ -2,10 +2,8 @@
 Sokol Tobias Ezequiel 120375/9
 Tatiana
 link al video:
-
+video Tobias: https://www.youtube.com/watch?v=JbHEH7bXYnU
 */
-
-
 
 let fondoX = 640, fondoY = 480;
 let txt, fuente;
@@ -21,6 +19,7 @@ function preload() {
   cargarVideos();
   fuente = loadFont('PORKYS.TTF');
   sonidoClic = loadSound ('sonidos/sonidoDecision.mp3');
+  sonidoClic.setVolume(0.1);
   for (let i=0; i<=19; i++) {
     let nombre = 'pantalla'+i+'.jpeg';
     pantallas.push(loadImage("imagenes/" + nombre));
@@ -29,7 +28,7 @@ function preload() {
 
 function setup() {
   createCanvas (fondoX, fondoY);
-  sonidoClic.setVolume(0.1);
+  
   round();
   tiempoInicio = millis();
   console.log(estado);

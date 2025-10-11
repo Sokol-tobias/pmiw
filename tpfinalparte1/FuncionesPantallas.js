@@ -70,20 +70,10 @@ function pantalla() {
       cambiarEstado('finalB');
     }
   }
-  if (p == 13 && estado == 'juego') {
+  if (p == 14 && estado == 'juego') {
     if (millis() - tiempoInicio > duracionPantalla1) {
       cambiarEstado('finalBR');
     }
-  }
-}
-
-//funcion para verificar las pantallas, borrar cuando se termine el codigo
-function keyPressed() {
-  if (key=='d'&& p<=18) {
-    estado= 'inicio';
-  }
-  if (key=='a'&& p<=18) {
-    p = 16;
   }
 }
 

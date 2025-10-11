@@ -82,32 +82,37 @@ function mouseReleased() {
     let h = boton[i][3];
 
     if ( mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
-     sonidoClic.play();
       if (i == 0 && estado == 'inicio') { // Iniciar
+        sonidoClic.play();
         estado = 'juego';
         p = 1;
         tiempoInicio = millis();
         console.log('estas apretando en iniciar');
       } else if (i == 1 && estado == 'inicio') { // Créditos
+        sonidoClic.play();
         estado = 'creditos';
         p = 0;
         console.log('estas apretando en creditos');
       } else if (i == 2 && estado == 'creditos') { // Créditos
+        sonidoClic.play();
         estado = 'inicio';
         p = 0;
         console.log('estas apretando en inicio');
       } else if (i == 3 && estado == 'reiniciar') { // Reiniciar
+        sonidoClic.play();
         estado = 'inicio';
         p = 0;
         tiempoInicio = millis();
         console.log('estas apretando en iniciar');
       } else if (estado == 'decision' && p== 2) { // decisiones si o no
         if (i == 4) {              // Botón NO
+          sonidoClic.play();
           estado = 'juego';
           p = 3;
           tiempoInicio = millis();
           console.log('no acepta el sueter:', p);
         } else if (i == 5) {       // Botón SI
+          sonidoClic.play();
           estado = 'juego';
           p = 4;
           tiempoInicio = millis();
@@ -115,18 +120,21 @@ function mouseReleased() {
         }
       } else if (estado == 'decision' && p== 5) { // decisiones intentarlo u otro camino
         if (i == 6) {               // Botón intentarlo
+          sonidoClic.play();
           estado = 'juego';
           p = 6;
           tiempoInicio = millis();
           console.log('intentarlo:', p);
         } else if (i == 7) {        // Botón otro camino
+          sonidoClic.play();
           estado = 'juego';
-          p = 12;
+          p = 13;
           tiempoInicio = millis();
           console.log(' otro camino:', p);
         }
       } else if (estado == 'decision' && p== 10) { // decision agarrarse
         if (i == 8) {               // Botón agarrarse
+          sonidoClic.play();
           estado = 'juego';
           p = 15;
           tiempoInicio = millis();
@@ -134,11 +142,13 @@ function mouseReleased() {
         }
       } else if (estado == 'decision' && p == 17) { // decisiones quedarse o escapar
         if (i == 9) {               // Botón escapar
+          sonidoClic.play();
           estado = 'juego';
           p = 18;
           tiempoInicio = millis();
           console.log('escapa:', p);
         } else if (i == 10) {       // Botón quedar
+          sonidoClic.play();
           estado = 'juego';
           p = 19;
           tiempoInicio = millis();
