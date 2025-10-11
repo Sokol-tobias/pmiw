@@ -1,5 +1,6 @@
 function pantalla() {
-  if (estado == 'inicio') {
+
+  if (estado == 'inicio') {                            //inicio pantalla de inicio con los creditos
     image(pantallas[p], 0, 0, fondoX, fondoY);
     botones();
   } else if (estado == 'creditos') {
@@ -7,6 +8,7 @@ function pantalla() {
     push();
     textFont(fuente);
     textSize(32);
+    botones();
     for (let i = 0; i < boton.length; i++) {
       let x = boton[i][0];
       let y = boton[i][1];
@@ -20,32 +22,63 @@ function pantalla() {
       if (i==1) {
         text('Tobias\nSokol', x, y);
       }
-      if (i==2) {
-        if (mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
-          fill(228, 0, 2);
-          noStroke();
-        } else {
-          fill(255);
-          stroke(0);
-          strokeWeight(1);
-        }
-        rect(x, 10, w, h, 16);
-        // texto
-        fill(mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h ? 255 : 0);
-        textFont(fuente);
-        textSize(32);
-        textAlign(LEFT, TOP);
-        text(texto, x + 10, y);
-      }
-    }
+    }                            //final pantalla de inicio con los creditos
     pop();
   } else if (estado == 'juego') {
     image(pantallas[p], 0, 0, fondoX, fondoY);
 
-    // Si pasaron más de 3 segundos
+    // Si pasaron más de 4 segundos
     if (millis() - tiempoInicio > duracionPantalla) {
-      p++;                // paso a la siguiente pantalla
-      tiempoInicio = millis(); // reinicio el contador
+      if (puntosDeDecision.includes(p + 1)) {
+        p++;
+        estado = 'decision';
+      } else {
+        p++;
+      }
+      tiempoInicio = millis(); // Reinicia el contador de tiempo
+    }
+  } else if (estado == 'decision') {
+    image(pantallas[p], 0, 0, fondoX, fondoY);
+    botones();
+  }
+
+  if (estado == 'reiniciar') {
+    image(pantallas[0], 0, 0, fondoX, fondoY);
+    botones();
+  }
+  if (p == 10 && estado =='decision') {
+    if (millis() - tiempoInicio > duracionDecision) {
+      p++;
+      estado = 'juego';
+      tiempoInicio = millis();
+    }
+  }
+  if (p == 3 && estado =='juego') {                          //finales
+    if (millis() - tiempoInicio > duracionDecision) {
+      estado = 'reiniciar';
+      tiempoInicio = millis();
+    }
+  }
+  if (p == 17 && estado =='juego') {
+    if (millis() - tiempoInicio > duracionDecision) {
+      estado = 'reiniciar';
+      tiempoInicio = millis();
+    }
+  }
+  if (p == 17 && estado =='juego') {
+    if (millis() - tiempoInicio > duracionDecision) {
+      estado = 'reiniciar';
+      tiempoInicio = millis();
+    }
+  }
+  if (p == 11 && estado == 'juego') {
+    if (millis() - tiempoInicio > duracionPantalla1) {
+      cambiarEstado('finalB');
+    }
+  }
+  if (p == 13 && estado == 'juego') {
+    if (millis() - tiempoInicio > duracionPantalla1) {
+      cambiarEstado('finalBR');
     }
   }
 }
@@ -54,5 +87,8 @@ function pantalla() {
 function keyPressed() {
   if (key=='d'&& p<=18) {
     estado= 'inicio';
+  }
+  if (key=='a'&& p<=18) {
+    p++;
   }
 }
