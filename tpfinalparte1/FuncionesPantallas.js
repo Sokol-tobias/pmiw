@@ -92,3 +92,72 @@ function keyPressed() {
     p++;
   }
 }
+
+function obtenerTextoPorPantalla(indice) {
+  
+  const mapaDeLineas = {
+    
+    1: 1,   // pantalla1 --> Línea 1 (txt[0])
+    2: 2,   // pantalla2 --> Línea 2 (txt[1])
+    3: 3,   // pantalla3 --> Línea 3 (txt[2])
+    4: 4,   // pantalla4 --> Línea 4 (txt[3])
+    5: 5,   // pantalla5 --> Línea 5 (txt[4])
+    6: 7,   // pantalla6 --> Línea 7 (txt[6])
+    7: 8,   // pantalla7 --> Línea 8 (txt[7])
+    8: 9,   // pantalla8 --> Línea 9 (txt[8])
+    9: 10,  // pantalla9 --> Línea 10 (txt[9])
+    10: 11, // pantalla10 --> Línea 11 (txt[10])
+    12: 6,  // pantalla12 --> Línea 6 (txt[5]) 
+    13: 7,  // pantalla13 --> Línea 7 (txt[6])
+    15: 13, // pantalla15 --> Línea 13 (txt[12])
+    16: 14, // pantalla16 --> Línea 14 (txt[13])
+    17: 15, // pantalla17 --> Línea 15 (txt[14])
+    18: 16  // pantalla18 --> Línea 16 (txt[15])
+  };
+  
+  let lineaDeseada = mapaDeLineas[indice];
+ 
+  if (lineaDeseada !== undefined) {
+    let indiceDeTexto = lineaDeseada - 1; 
+    
+    if (indiceDeTexto >= 0 && indiceDeTexto < txt.length) {
+       return txt[indiceDeTexto]; 
+    }
+  }
+  
+  return ""; 
+}
+
+function mostrarTextoJuego() {
+  if (estado === 'juego' || estado === 'decision') {
+    
+    let textoAMostrar = obtenerTextoPorPantalla(p); 
+    
+    if (textoAMostrar.length > 0) {
+      push();
+      
+      textFont(fuente); 
+      textSize(18); 
+      fill(255);  
+      noStroke();
+      textAlign(LEFT, TOP);
+    
+    // la posicion de la caja de texto
+      let xCaja = 15; 
+      let yCaja = 15; 
+      let wCaja = width * 0.75; 
+      let hCaja = 140; 
+      
+      // Fondo transparentito je
+      fill(0, 0, 0, 180); 
+      rect(xCaja, yCaja, wCaja, hCaja, 10); 
+      
+      // Texto
+      fill(255); 
+   
+      text(textoAMostrar, xCaja + 10, yCaja + 10, wCaja - 20, hCaja - 20);
+      
+      pop();
+    }
+  }
+    }

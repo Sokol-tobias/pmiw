@@ -29,5 +29,6 @@ function draw() {
   cursor('shurikenCursor.png');
   videos(); 
   pantalla();
+  mostrarTextoJuego();
   console.log(estado, p,Math.round((millis())/1000));
 }
