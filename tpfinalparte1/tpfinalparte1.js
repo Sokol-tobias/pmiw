@@ -1,15 +1,27 @@
+/*Alumnos:
+Sokol Tobias Ezequiel 120375/9
+Tatiana
+link al video:
+
+*/
+
+
+
 let fondoX = 640, fondoY = 480;
 let txt, fuente;
-let pantallas = [], estado = 'intro', p = 0, puntosDeDecision = [2, 4, 5, 10, 16]; //p de decision
+let pantallas = [], estado = 'intro', p = 0;
+const puntosDeDecision = [2, 4, 5, 10, 17]; //p de decision
 let video, videoFinalB, videoFinalBR;
 let tiempoInicio;
 let duracionPantalla = 4000, duracionPantalla1 = 3500, duracionDecision = 2500; 
+let sonidoClic;
 
 function preload() {
   txt = loadStrings ('texto.txt');
   cargarVideos();
   fuente = loadFont('PORKYS.TTF');
-  for (let i=0; i<=18; i++) {
+  sonidoClic = loadSound ('sonidos/sonidoDecision.mp3');
+  for (let i=0; i<=19; i++) {
     let nombre = 'pantalla'+i+'.jpeg';
     pantallas.push(loadImage("imagenes/" + nombre));
   }
@@ -17,6 +29,7 @@ function preload() {
 
 function setup() {
   createCanvas (fondoX, fondoY);
+  sonidoClic.setVolume(0.1);
   round();
   tiempoInicio = millis();
   console.log(estado);
@@ -30,5 +43,5 @@ function draw() {
   videos(); 
   pantalla();
   mostrarTextoJuego();
-  console.log(estado, p,Math.round((millis())/1000));
+  console.log(estado, p, Math.round((millis())/1000));
 }

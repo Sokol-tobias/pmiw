@@ -59,19 +59,13 @@ function pantalla() {
       tiempoInicio = millis();
     }
   }
-  if (p == 17 && estado =='juego') {
+  if (p == 18 || p == 19 && estado =='juego') {
     if (millis() - tiempoInicio > duracionDecision) {
       estado = 'reiniciar';
       tiempoInicio = millis();
     }
   }
-  if (p == 17 && estado =='juego') {
-    if (millis() - tiempoInicio > duracionDecision) {
-      estado = 'reiniciar';
-      tiempoInicio = millis();
-    }
-  }
-  if (p == 11 && estado == 'juego') {
+  if (p == 12 && estado == 'juego') {
     if (millis() - tiempoInicio > duracionPantalla1) {
       cambiarEstado('finalB');
     }
@@ -89,75 +83,80 @@ function keyPressed() {
     estado= 'inicio';
   }
   if (key=='a'&& p<=18) {
-    p++;
+    p = 16;
   }
 }
 
 function obtenerTextoPorPantalla(indice) {
-  
-  const mapaDeLineas = {
-    
-    1: 1,   // pantalla1 --> Línea 1 (txt[0])
-    2: 2,   // pantalla2 --> Línea 2 (txt[1])
-    3: 3,   // pantalla3 --> Línea 3 (txt[2])
-    4: 4,   // pantalla4 --> Línea 4 (txt[3])
-    5: 5,   // pantalla5 --> Línea 5 (txt[4])
-    6: 8,   // pantalla6 --> Línea 8 (txt[6])
-    7: 9,   // pantalla7 --> Línea 9 (txt[7])
-    8: 10,   // pantalla8 --> Línea 9 (txt[8])
-    9: 10,  // pantalla9 --> Línea 10 (txt[9])
-    10: 12, // pantalla10 --> Línea 11 (txt[10])
-    12: 6,  // pantalla12 --> Línea 6 (txt[5]) 
-    13: 7,  // pantalla13 --> Línea 7 (txt[6])
-    15: 13, // pantalla15 --> Línea 13 (txt[12])
-    16: 14, // pantalla16 --> Línea 14 (txt[13])
-    17: 15, // pantalla17 --> Línea 15 (txt[14])
-    18: 16  // pantalla18 --> Línea 16 (txt[15])
-  };
-  
-  let lineaDeseada = mapaDeLineas[indice];
- 
-  if (lineaDeseada !== undefined) {
-    let indiceDeTexto = lineaDeseada - 1; 
-    
-    if (indiceDeTexto >= 0 && indiceDeTexto < txt.length) {
-       return txt[indiceDeTexto]; 
-    }
+  let lineaDeseada;
+  if (indice == 1) {
+    lineaDeseada = 1;           //txt0
+  } else if (indice == 2) {
+    lineaDeseada = 2;           //txt1
+  } else if (indice == 3) {
+    lineaDeseada = 3;           //txt2
+  } else if (indice == 4) {
+    lineaDeseada = 4;           //txt3
+  } else if (indice == 5) {
+    lineaDeseada = 5;           //txt4
+  } else if (indice == 6) {
+    lineaDeseada = 6;           //txt5
+  } else if (indice == 7) {
+    lineaDeseada = 7;           //txt6
+  } else if (indice == 8) {
+    lineaDeseada = 8;           //txt7
+  } else if (indice == 9) {
+    lineaDeseada = 9;           //txt8
+  } else if (indice == 10) {
+    lineaDeseada = 10;          //txt9
+  } else if (indice == 11) {
+    lineaDeseada = 11;           //txt10
+  } else if (indice == 12) {
+    lineaDeseada = 12;           //txt11
+  } else if (indice == 13) {
+    lineaDeseada = 13;          //txt12
+  } else if (indice == 14) {
+    lineaDeseada = 14;          //txt13
+  } else if (indice == 16) {
+    lineaDeseada = 16;          //txt14
+  } else if (indice == 17) {
+    lineaDeseada = 17;          //txt15
+  } else if (indice == 18) {
+    lineaDeseada = 19;          //txt16
+  } else if (indice == 19) {
+    lineaDeseada = 18;          //txt17
+  } else {
+    return "";
   }
-  
-  return ""; 
+  let indiceDeTexto = lineaDeseada - 1;
+  if (indiceDeTexto >= 0 && indiceDeTexto < txt.length) {
+    return txt[indiceDeTexto];
+  }
+  return "";
 }
 
 function mostrarTextoJuego() {
   if (estado === 'juego' || estado === 'decision') {
-    
-    let textoAMostrar = obtenerTextoPorPantalla(p); 
-    
+    let textoAMostrar = obtenerTextoPorPantalla(p);
     if (textoAMostrar.length > 0) {
       push();
-      
-      textFont(fuente); 
-      textSize(18); 
-      fill(255);  
+      textFont(fuente);
+      textSize(18);
+      fill(255);
       noStroke();
       textAlign(LEFT, TOP);
-    
-    // la posicion de la caja de texto
-      let xCaja = 15; 
-      let yCaja = 15; 
-      let wCaja = width * 0.75; 
-      let hCaja = 140; 
-      
+      // la posicion de la caja de texto
+      let xCaja = 15;
+      let yCaja = 15;
+      let wCaja = width * 0.75;
+      let hCaja = 140;
       // Fondo transparentito je
-      fill(0, 0, 0, 180); 
-      rect(xCaja, yCaja, wCaja, hCaja, 10); 
-      
+      fill(0, 0, 0, 180);
+      rect(xCaja, yCaja, wCaja, hCaja, 10);
       // Texto
-      fill(255); 
-   
+      fill(255);
       text(textoAMostrar, xCaja + 10, yCaja + 10, wCaja - 20, hCaja - 20);
-      
       pop();
     }
   }
-    }
+}

@@ -8,8 +8,8 @@ boton = [
   [460, 430, 150, 44, 'intentarlo'], // 6
   [30, 430, 185, 44, 'otro camino'], // 7
   [244, 430, 153, 44, 'agarrarse'], // 8
-  [460, 430, 150, 44, 'escapar'], // 9
-  [30, 430, 185, 44, 'quedarse'], // 10
+  [460, 430, 126, 44, 'escapar'], // 9
+  [30, 430, 149, 44, 'quedarse'], // 10
   ]
 
   function dibujarBoton(x, y, w, h, texto, corner) {
@@ -64,6 +64,11 @@ function botones() {
       let [x, y, w, h, texto] = boton[i];
       dibujarBoton(x, y, w, h, texto, corner);
     }
+  } else if (estado == 'decision' && p== 17) {   //se agarra?
+    for (let i = 9; i <=10; i++) {
+      let [x, y, w, h, texto] = boton[i];
+      dibujarBoton(x, y, w, h, texto, corner);
+    }
   }
 
 
@@ -77,6 +82,7 @@ function mouseReleased() {
     let h = boton[i][3];
 
     if ( mouseX > x && mouseX < x + w && mouseY > y && mouseY < y + h) {
+     sonidoClic.play();
       if (i == 0 && estado == 'inicio') { // Iniciar
         estado = 'juego';
         p = 1;
@@ -122,11 +128,11 @@ function mouseReleased() {
       } else if (estado == 'decision' && p== 10) { // decision agarrarse
         if (i == 8) {               // Botón agarrarse
           estado = 'juego';
-          p = 14;
+          p = 15;
           tiempoInicio = millis();
           console.log('se agarra', p);
         }
-      } else if (estado == 'decision' && p== 16) { // decisiones quedarse o escapar
+      } else if (estado == 'decision' && p == 17) { // decisiones quedarse o escapar
         if (i == 9) {               // Botón escapar
           estado = 'juego';
           p = 18;
@@ -134,7 +140,7 @@ function mouseReleased() {
           console.log('escapa:', p);
         } else if (i == 10) {       // Botón quedar
           estado = 'juego';
-          p = 17;
+          p = 19;
           tiempoInicio = millis();
           console.log(' otro camino:', p);
         }
