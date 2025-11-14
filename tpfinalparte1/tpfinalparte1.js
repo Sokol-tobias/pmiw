@@ -16,7 +16,7 @@ let duracionPantalla = 4000, duracionPantalla1 = 3500, duracionDecision = 2500;
 let sonidoClic;
 
 function preload() {
-  txt = loadStrings ('m;
+  txt = loadStrings ('texto.txt');
   cargarVideos();
   fuente = loadFont('PORKYS.TTF');
   sonidoClic = loadSound ('sonidos/sonidoDecision.mp3');
