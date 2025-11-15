@@ -1,42 +1,41 @@
-// Tobias Ezequiel Sokol 120375/9
-// link: https://youtu.be/TlnGF25iOKI
-let pantalla = 1;
-let nave, balas = [], fragmentos = [], obstáculos = [];
-let juegoTerminado = false;
-let gano = false;
-let botonComenzar, botonCreditos, botonInstrucciones, botonVolver;
-let imagenes = {};
-let sonido;
+/*Alumnos:
+Sokol Tobias Ezequiel 120375/9
+Tatiana montenegro 120347/4
+links al video
+video Tobias:
+video de tatiana:
+*/
 
-function preload() {
-  imagenes["inicio"] = loadImage("data/img1.jpg");
-  imagenes["juego"] = loadImage("data/img2.jpg");
-  imagenes["creditos"] = loadImage("data/img4.jpg");
-  imagenes["instrucciones"] = loadImage("data/img3.jpg");
-  sonido=loadSound("data/sonido.mp3");
+let jugador = new personaje();
+let pantalla = new pantallas();
+let boton = new Boton();
+let juego;
+
+function preload () {
+  pantalla.cargar();
 }
 
-function setup() {
-  createCanvas(640, 480);
-  crearBotones();
-  iniciar();
+function setup () {
+  createCanvas (640, 480);
+  cursor('shurikenCursor.png');
+  juego = new Juego()
+    juego.iniciar();
+  boton.crearBotones();
 }
 
-function draw() {
-  if (pantalla === 1) {
-    image(imagenes["inicio"], 0, 0, width, height);
-    mostrarInicio();
-  } else if (pantalla === 2) {
-    image(imagenes["juego"], 0, 0, width, height);
-    actualizarJuego();
-    if (keyIsPressed) {
-      nave.teclaPresionada();
-    }
-  } else if (pantalla === 3) {
-    image(imagenes["creditos"], 0, 0, width, height);
-    mostrarCreditos();
-  } else if (pantalla === 4) {
-    image(imagenes["instrucciones"], 0, 0, width, height);
-    mostrarInstrucciones();
+function draw () {
+  pantalla.dibujar();
+  boton.botonesPantalla();
+
+}
+
+function keyPressed() {
+  if (pantalla.p === 'juego') {
+    jugador.mover();
   }
+}
+
+
+function mouseReleased() {
+  boton.cambioPantalla();
 }
