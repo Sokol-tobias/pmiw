@@ -2,7 +2,7 @@
 Sokol Tobias Ezequiel 120375/9
 Tatiana montenegro 120347/4
 links al video
-video Tobias:
+video Tobias: https://youtu.be/PXPBz2P0NGs
 video de tatiana:
 */
 
@@ -39,3 +39,4 @@ function keyPressed() {
 function mouseReleased() {
   boton.cambioPantalla();
 }
+
