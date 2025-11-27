@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TPWEB2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-nav">
+        <div class="container">
+            <a class="navbar-brand font-orbitron" href="#">TP WEB FINAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tematica">Temática</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#proceso">Proceso</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#equipo">Equipo</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero-section d-flex align-items-center text-center">
+        <div class="container">
+            <h1 class="display-1 fw-bold text-light font-orbitron mb-4">GARU Y LA PRUEBA FINAL</h1>
+            <p class="lead text-light-50">Una aventura única por el título "Ninja Avispa de Fuego".</p>
+            
+            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <button type="button" class="btn btn-primary btn-lg px-5 py-3 font-orbitron" data-bs-toggle="modal" data-bs-target="#juegoModal">
+                    JUGAR AHORA
+                </button>
+                <a href="#tematica" class="btn btn-outline-light btn-lg px-5 py-3">Saber más</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="tematica" class="section-padding bg-darker">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="font-orbitron text-primary mb-4">La Temática</h2>
+                    <h3 class="text-white mb-3">¿De que es nuestra aventura?</h3>
+                    <p class="text-light-50">
+                        Nuestra aventura gráfica explora el mundo de la serie Pucca utilizando dos capítulos en especifico para crear la historia de la aventura gráfica:
+                    </p>
+                    <ul class="list-unstyled text-light">
+                        <li class="text-light-50"><a href="https://www.youtube.com/watch?v=LshBY91wy_4">Pucca: El Guerrero Abrigado</a></li>
+                        <li class="text-light-50"><a href="https://www.youtube.com/watch?v=1ZtsxyKL9vE">Pucca: Aventura Australiana</a></li></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <img src="Pucca.webp" alt="Portada de la serie Pucca" class="img-fluid rounded-4 shadow-lg border border-primary">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proceso" class="section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="font-orbitron text-primary">Proceso de creación</h2>
+                <p class="text-light-50">Cómo construimos esta aventura desde cero.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 bg-dark-card border-0 text-light p-3">
+                        <div class="card-body">
+                            <h4 class="card-title font-orbitron">1. Concepto</h4>
+                            <p class="card-text text-light-50">Definimos la idea basándonos en la temática que eran series animadas, elegimos Pucca porque a los dos nos gustó, además de que tiene historias simples y divertidas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-dark-card border-0 text-light p-3">
+                        <div class="card-body">
+                            <h4 class="card-title font-orbitron">2. Desarrollo</h4>
+                            <p class="card-text text-light-50">Utilizamos el programa Processing para crear el código en P5js y github desktop para trabajar de forma casi simultánea.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 bg-dark-card border-0 text-light p-3">
+                        <div class="card-body">
+                            <h4 class="card-title font-orbitron">3. Diseño</h4>
+                            <p class="card-text text-light-50">Decidimos por experimentar en el uso de videos para ciertas instancias de la aventura como el inicio y algunos finales, las imagenes las sacamos directamente de los capítulos usados y decidimos tomar la tipografía del titulo de la serie para que los textos estén acorde a la temática.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="equipo" class="section-padding bg-darker">
+        <div class="container text-center">
+            <h2 class="font-orbitron text-primary mb-5">El Equipo</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4 mb-4">
+                    <div class="team-member">
+                        <h4 class="text-white">Tobias Sokol</h4>
+                        <p class="text-light-50">120375/9</p>
+
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="team-member">
+                        <h4 class="text-white">Tatiana Montenegro</h4>
+                        <p class="text-light-50">legajo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal fade" id="juegoModal" tabindex="-1" aria-labelledby="juegoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl"> 
+            <div class="modal-content custom-modal-content">
+                <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <div class="ratio ratio-4x3">
+                    <iframe 
+                        src="tpfinalparte1/index.html" 
+                        title="Aventura Gráfica P5JS" 
+                        allowfullscreen
+                        style="border: 0;"
+                    ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-black py-4 text-center text-light-50">
+        <div class="container">
+            <p class="mb-0">TP N°2 Web & TP N°1 P5JS</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
